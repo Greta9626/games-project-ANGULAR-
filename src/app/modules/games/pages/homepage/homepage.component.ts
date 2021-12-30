@@ -16,10 +16,10 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
     // SERVICE TEST
     //
-    // this.subs.push(this.gamesService.getAllGames().subscribe(data => console.log(data)));
-    // this.subs.push(this.gamesService.getGamesByCategory('shooter').subscribe(data => console.log(data)));
-    // this.subs.push(this.gamesService.getGamesByPlatform('pc').subscribe(data => console.log(data)));
-    // this.subs.push(this.gamesService.getMostPlayerGames().subscribe(data => console.log(data)));
+    this.subs.push(this.gamesService.getAllGames().subscribe(data => console.log(data)));
+    this.subs.push(this.gamesService.getGamesByCategory('shooter').subscribe(data => console.log(data)));
+    this.subs.push(this.gamesService.getGamesByPlatform('pc').subscribe(data => console.log(data)));
+    this.subs.push(this.gamesService.getMostPlayedGames().subscribe(data => console.log(data)));
   }
 
   ngOnDestroy() {

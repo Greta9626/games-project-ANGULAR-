@@ -17,27 +17,27 @@ export class GamesService {
   // Is Builder pattern needed?!
 
   getAllGames(): Observable<IGame[]> {
-    return this.http.get<IGame[]>(`${environment.apiURL}/games`);
+    return this.http.get<IGame[]>(`${environment.apiURL}`);
   }
 
   getGamesByCategory(category: string): Observable<IGame[]> {
     const param = new HttpParams().set('category', category);
 
-    return this.http.get<IGame[]>(`${environment.apiURL}/games`, { params: param });
+    return this.http.get<IGame[]>(`${environment.apiURL}`, { params: param });
   }
 
   getGamesByPlatform(platform: string): Observable<IGame[]> {
     const param = new HttpParams().set('platform', platform);
 
-    return this.http.get<IGame[]>(`${environment.apiURL}/games`, { params: param });
+    return this.http.get<IGame[]>(`${environment.apiURL}`, { params: param });
   }
 
   // TODO:
   //  it's time consuming getting all games, it should block the call after
   //  getting 10 games or whatever number we need for the project
-  getMostPlayerGames(): Observable<IGame[]> {
+  getMostPlayedGames(): Observable<IGame[]> {
     const param = new HttpParams().set('sort-by', 'popularity');
 
-    return this.http.get<IGame[]>(`${environment.apiURL}/games`, { params: param });
+    return this.http.get<IGame[]>(`${environment.apiURL}`, { params: param });
   }
 }

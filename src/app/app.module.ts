@@ -15,7 +15,6 @@ import { MostPlayedCardComponent } from './modules/games/components/most-played-
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
-// import { MainContainerComponent } from './modules/games/components/MAIN-CONTAINER/main-container.component';
 
 @NgModule({
   declarations: [
