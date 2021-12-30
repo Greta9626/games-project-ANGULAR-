@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http'
 import { environment } from 'src/environments/environment';
-import { IGame } from '../models/game';
+import { Game, IGame } from '../models/game';
 import { map } from 'rxjs/operators'
 import { Observable } from 'rxjs';
 
@@ -16,8 +16,9 @@ export class GamesService {
 
   // Is Builder pattern needed?!
 
-  getAllGames(): Observable<IGame[]> {
-    return this.http.get<IGame[]>(`${environment.apiURL}`);
+  getAllGames(): Observable<Game[]> {
+    return this.http.get<IGame[]>(`${environment.apiURL}`)
+      .pipe(map( response => response.map(game => Game.Build(game))));
   }
 
   getGamesByCategory(category: string): Observable<IGame[]> {

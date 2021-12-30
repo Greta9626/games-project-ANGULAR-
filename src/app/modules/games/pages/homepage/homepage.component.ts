@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { Game } from '../../models/game';
 import { GamesService } from '../../services/games.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { GamesService } from '../../services/games.service';
 })
 export class HomepageComponent implements OnInit {
 
+  allGames!: Game[];
   subs: Subscription[] = [];
 
   constructor(private gamesService: GamesService) { }
@@ -16,10 +18,11 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
     // SERVICE TEST
     //
-    this.subs.push(this.gamesService.getAllGames().subscribe(data => console.log(data)));
-    this.subs.push(this.gamesService.getGamesByCategory('shooter').subscribe(data => console.log(data)));
-    this.subs.push(this.gamesService.getGamesByPlatform('pc').subscribe(data => console.log(data)));
-    this.subs.push(this.gamesService.getMostPlayedGames().subscribe(data => console.log(data)));
+    this.subs.push(this.gamesService.getAllGames().subscribe(data => this.allGames = data));
+
+    // this.subs.push(this.gamesService.getGamesByCategory('shooter').subscribe(data => console.log(data)));
+    // this.subs.push(this.gamesService.getGamesByPlatform('pc').subscribe(data => console.log(data)));
+    // this.subs.push(this.gamesService.getMostPlayedGames().subscribe(data => console.log(data)));
   }
 
   ngOnDestroy() {
