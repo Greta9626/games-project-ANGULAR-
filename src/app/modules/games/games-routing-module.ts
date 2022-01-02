@@ -15,6 +15,9 @@ const routes: Routes = [
         { path: 'most-played', component: MostPlayedComponent },
         { path: 'developer', component: DeveloperComponent },
       ]
+    },
+    {
+      path: '**', redirectTo: 'homepage'
     }
 ];
 

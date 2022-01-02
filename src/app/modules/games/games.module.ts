@@ -1,3 +1,6 @@
+import { GamesListComponent } from './components/games-list/games-list.component';
+import { GameCardComponent } from './components/game-card/game-card.component';
+import { MainHomepageComponent } from './components/main-homepage/main-homepage.component';
 import { MainContainerComponent } from './components/MAIN-CONTAINER/main-container.component';
 import { MostPlayedComponent } from './pages/most-played/most-played.component';
 import { DeveloperComponent } from './pages/developer/developer.component';
@@ -17,6 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
     PlatformComponent,
     MostPlayedComponent,
     DeveloperComponent,
+    MainHomepageComponent,
+    GameCardComponent,
+    GamesListComponent,
   ],
   imports: [
     CommonModule,

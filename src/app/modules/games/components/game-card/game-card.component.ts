@@ -1,15 +1,40 @@
-import { Component, OnInit } from '@angular/core';
+import { GamesService } from './../../services/games.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Subscription } from 'rxjs';
+import { IGame } from './../../models/game';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-game-card',
   templateUrl: './game-card.component.html',
-  styleUrls: ['./game-card.component.scss']
+  styleUrls: ['./game-card.component.scss'],
 })
 export class GameCardComponent implements OnInit {
+  @Input() gameData!: IGame;
 
-  constructor() { }
+  allGames!: IGame[];
+  gameDetail!: IGame;
+  subs: Subscription[] = [];
 
-  ngOnInit(): void {
+  constructor(
+    private modalService: NgbModal,
+    private gamesService: GamesService
+  ) {}
+
+  ngOnInit(): void {}
+
+  open(content: any) {
+    this.subs.push(
+      this.gamesService.getSingleGame(this.gameData.id).subscribe(
+        (data) => (
+          (this.gameDetail = data),
+          this.modalService.open(content, {
+            ariaLabelledBy: 'game-info',
+            centered: true,
+            windowClass: 'modal-custom',
+          })
+        )
+      )
+    );
   }
-
 }

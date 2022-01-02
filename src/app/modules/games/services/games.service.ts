@@ -41,4 +41,10 @@ export class GamesService {
 
     return this.http.get<IGame[]>(`${environment.apiURL}`, { params: param });
   }
+
+  getSingleGame(id: number): Observable<IGame> {
+    const param = new HttpParams().set('id', id);
+
+    return this.http.get<IGame>('https://www.freetogame.com/api/game', { params: param });
+  }
 }
