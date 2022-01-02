@@ -1,1 +1,39 @@
-<p>game-card works!</p>
+<!-- SINGLE CARD -->
+<div class="card d-flex">
+  <img src={{gameData.thumbnail}} class="card-img-top" alt="copertina gioco">
+  <div class="card-body d-flex justify-content-between">
+    <div class="mb-2">
+      <h6 class="card-title mb-1">{{gameData.title}}</h6>
+      <h6 class="badge badge-primary p-1 px-2">{{gameData.genre | uppercase}}</h6>
+    </div>
+    <a class="stretched-link text-decoration-none font-weight-normal" id="btn" (click)="open(content)">More info
+    </a>
+  </div>
+</div>
+
+
+
+<!-- MODAL -->
+<ng-template #content let-modal class="modal">
+  <div class="modal-header position-relative d-flex flex-row p-0 border-0">
+    <img src={{gameData.thumbnail}} class="card-img-top" alt="copertina gioco">
+    <button type="button" class="btn btn-danger" (click)="modal.close('Cross click')">X</button>
+  </div>
+
+  <!-- body -->
+  <div class="modal-body">
+    <div class="d-flex justify-content-between">
+      <h4 class="modal-title" id="game-info">{{gameData.title}}</h4>
+      <a href="{{gameData.game_url}}" target="_blank" class="font-weight-normal text-decoration-none" id="btn-download">DOWNLOAD
+        NOW</a>
+    </div>
+
+    <div class="d-flex flex-row mb-2">
+      <h6 class="badge badge-primary py-1 px-2 mr-3" id="genre">{{gameData.genre | uppercase}}</h6>
+      <h6 class="mr-3 my-1" id="platform">{{gameDetail.platform | uppercase}}</h6>
+      <h6 class="mr-3 my-1 font-weight-normal" id="developer">{{gameDetail.developer}}</h6>
+    </div>
+
+    <p id="game-info" class="font-weight-light">{{gameDetail.description}}</p>
+  </div>
+</ng-template>
