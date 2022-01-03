@@ -18,6 +18,7 @@ import { MainDeveloperComponent } from './modules/games/components/main-develope
 import { MostPlayedCardComponent } from './modules/games/components/most-played-card/most-played-card.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MainContainerComponent } from './modules/games/components/MAIN-CONTAINER/main-container.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { MainContainerComponent } from './modules/games/components/MAIN-CONTAINE
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
