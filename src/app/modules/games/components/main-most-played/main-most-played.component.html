@@ -2,7 +2,10 @@
   - Most played games count
   - Fix layout
 -->
-<h2>Most Played (999)</h2>
+<div class="d-flex">
+  <h2 class="font-weight-normal">Most Played</h2>
+  <h3 class="font-weight-light">(999)</h3>
+</div>
 <app-games-list
     [listStyle]="{ type: 'col-4 mb-5', partialGamesCounter: 3, showViewMore: false}">
 </app-games-list>
