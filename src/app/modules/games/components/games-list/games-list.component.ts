@@ -1,12 +1,12 @@
-import { GamesService } from './../../services/games.service';
-import { Subscription } from 'rxjs';
-import { IGame } from './../../models/game';
+import { Game, IGame } from './../../models/game';
 import { Component, Input, OnInit } from '@angular/core';
+import { interval } from 'rxjs';
 
 interface GameListStyle{
   showViewMore: boolean;
   partialGamesCounter: number;
   type: string; //'col-3 mb-4' | 'col-4 mb-3';
+  cardHeight: string
 }
 
 @Component({
@@ -16,29 +16,30 @@ interface GameListStyle{
 })
 export class GamesListComponent implements OnInit {
 
-  @Input() set listStyle(value: Partial<GameListStyle>){
-    this._listStyle = { ...this._listStyle, ...value };
-  }
-
   _listStyle: GameListStyle = {
     showViewMore: true,
     partialGamesCounter: 8,
-    type: 'col-3 mb-4'
+    type: 'col-3 mb-4',
+    cardHeight: '240px'
   }
 
-  allGames!: IGame[];
-  partialAllGames!: IGame[];
-  subs: Subscription[] = [];
+  @Input() set listStyle(value: Partial<GameListStyle>){
+    this._listStyle = { ...this._listStyle, ...value };
+  }
+  @Input() gameList!: Game[];
 
+  partialGameList!: Game[];
 
-  constructor(private gamesService: GamesService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.subs.push(this.gamesService.getAllGames().subscribe(data => (this.allGames = data, this.partialAllGames = data.slice(0, this._listStyle.partialGamesCounter))));
+    interval(1000).subscribe(
+      () => this.partialGameList = this.gameList.slice(0, this._listStyle.partialGamesCounter)
+    )
   }
 
   viewMore(): void {
-    this.partialAllGames.push(...this.allGames.slice(this._listStyle.partialGamesCounter, this._listStyle.partialGamesCounter + 8));
+    this.partialGameList.push(...this.gameList.slice(this._listStyle.partialGamesCounter, this._listStyle.partialGamesCounter + 8));
     this._listStyle.partialGamesCounter += 8;
   }
 
