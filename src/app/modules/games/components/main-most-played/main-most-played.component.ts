@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Game } from '../../models/game';
+import { GamesService } from '../../services/games.service';
 
 @Component({
   selector: 'app-main-most-played',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainMostPlayedComponent implements OnInit {
 
-  constructor() { }
+  mostPlayedGames!: Game[];
+
+  constructor(private gameService: GamesService) { }
 
   ngOnInit(): void {
+    this.gameService.getMostPlayedGames().subscribe(data => this.mostPlayedGames = data);
   }
 
 }

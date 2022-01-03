@@ -11,6 +11,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class GameCardComponent implements OnInit {
   @Input() gameData!: IGame;
+  @Input() cardHeight = "240px";
 
   allGames!: IGame[];
   gameDetail!: IGame;
