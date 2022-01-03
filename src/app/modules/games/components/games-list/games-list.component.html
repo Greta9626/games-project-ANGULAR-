@@ -1,11 +1,11 @@
 <div class="d-flex flex-column">
     <div class="container">
         <div class="row">
-            <div *ngFor="let game of partialAllGames" class="col-3 mb-4">
+            <div *ngFor="let game of partialAllGames" [ngClass]="_listStyle.type">
                 <app-game-card [gameData]="game"></app-game-card>
             </div>
         </div>
     </div>
 
-    <a class="btn d-flex justify-content-center" (click)="viewMore()">View More</a>
+    <a *ngIf="_listStyle.showViewMore" class="btn d-flex justify-content-center" (click)="viewMore()">View More</a>
 </div>

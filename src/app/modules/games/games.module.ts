@@ -10,6 +10,7 @@ import { GamesRoutingModule } from './games-routing-module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { MainMostPlayedComponent } from './components/main-most-played/main-most-played.component';
 
 
 
@@ -18,11 +19,12 @@ import { HttpClientModule } from '@angular/common/http';
     MainContainerComponent,
     HomepageComponent,
     PlatformComponent,
-    MostPlayedComponent,
     DeveloperComponent,
     MainHomepageComponent,
     GameCardComponent,
     GamesListComponent,
+    MostPlayedComponent,
+    MainMostPlayedComponent,
   ],
   imports: [
     CommonModule,
