@@ -1,1 +1,9 @@
-<p>main-most-played works!</p>
+<!-- TODO:
+  - Most played games count
+  - Fix layout
+-->
+<h2>Most Played (999)</h2>
+<app-games-list
+    [listStyle]="{ type: 'col-4 mb-5', partialGamesCounter: 3, showViewMore: false}">
+</app-games-list>
+<app-games-list></app-games-list>

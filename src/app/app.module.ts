@@ -21,7 +21,6 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     BannerCardComponent,
     MainPlatformComponent,
-    MainMostPlayedComponent,
     MainDeveloperComponent,
     MostPlayedCardComponent,
 
