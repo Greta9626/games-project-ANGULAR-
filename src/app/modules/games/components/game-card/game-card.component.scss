@@ -1,0 +1,77 @@
+.card {
+  background-color: #2b2e33;
+  border-radius: 20px;
+  height: 240px;
+  font-size: 12px;
+  padding: 0;
+}
+
+.card:hover {
+  background-color: black;
+}
+
+#btn {
+  padding: 0;
+  font-weight: bold;
+  border: none;
+  background: none;
+  color: #2dd295;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#btn-download {
+  color: #2DD295;
+  padding-top: 7px;
+}
+
+#genre {
+  font-size: 13px;
+}
+
+#platform {
+  color: #A27CAF;
+  font-size: 13px;
+}
+
+#developer {
+  color: #6F87A3;
+  font-size: 13px;
+}
+
+.badge {
+  border-radius: 20px;
+  background-color: #f06220;
+  font-weight: 500;
+}
+
+#game-info {
+  font-size: 16px;
+}
+
+.card-img-top {
+  border-radius: 20px 20px 0px 0px;
+}
+
+.btn-danger {
+  position: absolute;
+  border-radius: 10px;
+  top: 10px;
+  right: 10px;
+}
+
+.modal-body {
+  height: 250px;
+  overflow-y: auto;
+}
+
+.modal-body::-webkit-scrollbar {
+  width: 3px;
+  background-color: rgb(92, 92, 92);
+  border-radius: 10px;
+  max-height: 10px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background: #2dd295;
+}

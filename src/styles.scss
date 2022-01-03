@@ -1,4 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+
+@font-face {
+  font-family: MADE Tommy Soft;
+  src: url(assets/fonts/MADE-Tommy-Soft-Regular.otf) format(opentype);
+  src: url(assets/fonts/MADE-Tommy-Soft-Medium.otf) format(opentype);
+  src: url(assets/fonts/MADE-Tommy-Soft-Bold.otf) format(opentype);
+}
+
+body {
+  font-family: 'MADE Tommy Soft';
+}
+
+.modal-custom .modal-content {
+  border: 0px none #FFFFFF;
+  border-radius: 24px;
+  background-color: #2B2E35;
+  color: white;
+  padding: 5px 5px 16px 5px;
+}
+
+.modal-custom .modal-dialog {
+  overflow-y: initial;
+  max-width: 600px;
+  justify-content: center;
+}
