@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Game } from '../../models/game';
 
 @Component({
   selector: 'app-most-played-card',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./most-played-card.component.scss']
 })
 export class MostPlayedCardComponent implements OnInit {
+
+  @Input() partialMostPlayed!: Game[];
 
   constructor() { }
 

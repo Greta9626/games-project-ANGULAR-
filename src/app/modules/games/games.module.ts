@@ -11,6 +11,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { MainMostPlayedComponent } from './components/main-most-played/main-most-played.component';
+import { MostPlayedCardComponent } from './components/most-played-card/most-played-card.component';
 
 
 
@@ -25,6 +26,7 @@ import { MainMostPlayedComponent } from './components/main-most-played/main-most
     GamesListComponent,
     MostPlayedComponent,
     MainMostPlayedComponent,
+    MostPlayedCardComponent,
   ],
   imports: [
     CommonModule,
