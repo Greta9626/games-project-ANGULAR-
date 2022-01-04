@@ -22,13 +22,16 @@ export class GameCardComponent implements OnInit {
     private gamesService: GamesService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    
+  }
 
   open(content: any) {
     this.subs.push(
       this.gamesService.getSingleGame(this.gameData.id).subscribe(
         (data) => (
           (this.gameDetail = data),
+          console.log(data),
           this.modalService.open(content, {
             ariaLabelledBy: 'game-info',
             centered: true,

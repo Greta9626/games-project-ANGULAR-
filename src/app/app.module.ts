@@ -7,12 +7,11 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { BannerCardComponent } from './modules/games/components/banner-card/banner-card.component';
 import { MainPlatformComponent } from './modules/games/components/main-platform/main-platform.component';
-import { MainMostPlayedComponent } from './modules/games/components/main-most-played/main-most-played.component';
-import { MainDeveloperComponent } from './modules/games/components/main-developer/main-developer.component';
 import { MostPlayedCardComponent } from './modules/games/components/most-played-card/most-played-card.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,16 +20,15 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     BannerCardComponent,
     MainPlatformComponent,
-    MainDeveloperComponent,
     MostPlayedCardComponent,
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
