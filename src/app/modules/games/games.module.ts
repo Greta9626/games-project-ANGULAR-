@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { MainMostPlayedComponent } from './components/main-most-played/main-most-played.component';
 import { FormsModule } from '@angular/forms';
-
+import { MostPlayedCardComponent } from './components/most-played-card/most-played-card.component';
 
 
 @NgModule({
@@ -28,6 +28,7 @@ import { FormsModule } from '@angular/forms';
     GamesListComponent,
     MostPlayedComponent,
     MainMostPlayedComponent,
+    MostPlayedCardComponent,
   ],
   imports: [
     CommonModule,

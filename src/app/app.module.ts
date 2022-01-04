@@ -7,7 +7,6 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { BannerCardComponent } from './modules/games/components/banner-card/banner-card.component';
 import { MainPlatformComponent } from './modules/games/components/main-platform/main-platform.component';
-import { MostPlayedCardComponent } from './modules/games/components/most-played-card/most-played-card.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,7 +19,6 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     BannerCardComponent,
     MainPlatformComponent,
-    MostPlayedCardComponent,
   ],
   imports: [
     BrowserModule,

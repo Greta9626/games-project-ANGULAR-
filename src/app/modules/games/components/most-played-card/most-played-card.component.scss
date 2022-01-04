@@ -1,0 +1,42 @@
+.card {
+  background-color: #2b2e33;
+  border-radius: 20px;
+  font-size: 12px;
+  padding: 0;
+}
+
+.card-item:not(:last-child){
+  border-bottom: 1px solid #aeaeae;
+}
+
+.card-img {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+#btn-download {
+  color: #2DD295;
+  padding-top: 7px;
+}
+
+a.btn {
+  padding: 0;
+  border: none;
+  background: none;
+  color: #9E9E9E;
+}
+
+a.btn:hover {
+  color: white;
+}
+
+h5{
+  font-size: 0.9rem;
+}
+
+h6{
+  font-size: 0.8rem;
+  color: #aeaeae;
+}

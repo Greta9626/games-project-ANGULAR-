@@ -1,1 +1,21 @@
-<p>most-played-card works!</p>
+<div class="card">
+  <div class="mx-3 my-2">
+    <div class="d-flex justify-content-between card-buttons">
+      <h5 class="align-self-baseline">Most Played</h5>
+      <a href="#" class="btn align-self-baseline" routerLink="../most-played">View More</a>
+    </div>
+    <div class="card-item" *ngFor="let game of partialMostPlayed">
+      <div class="d-flex justify-content-between my-3">
+        <img src={{game.thumbnail}} class="card-img" alt="copertina gioco">
+        <div class="mr-auto ml-3 align-self-baseline">
+          <h5 class="card-title mb-1">{{game.title}}</h5>
+          <h6 class="font-weight-light">{{game.developer}}</h6>
+          <h6 class="font-weight-light">{{game.platform}}</h6>
+        </div>
+        <a class="text-decoration-none font-weight-normal align-self-baseline" id="btn-download">Download Now
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- (click)="open(content) -->
