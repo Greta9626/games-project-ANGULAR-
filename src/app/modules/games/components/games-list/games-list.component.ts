@@ -14,6 +14,7 @@ interface GameListStyle{
   templateUrl: './games-list.component.html',
   styleUrls: ['./games-list.component.scss']
 })
+
 export class GamesListComponent implements OnInit {
 
   @Input() set listStyle(value: Partial<GameListStyle>){

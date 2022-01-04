@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPlatformComponent implements OnInit {
 
+
+
   constructor() { }
 
   ngOnInit(): void {
+    /* service.getGamesByPlatform('all').subscribe((data) => {
+
+
+      this.games = data;
+    }) */
   }
+
+/*   onChangePlatform(platform: string): void {
+    service.getGamesByPlatform(platform).subscribe((data) => {
+
+      this.games = data;
+    })
+  } */
 
 }
