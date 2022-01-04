@@ -11,13 +11,8 @@ import { MainMostPlayedComponent } from './modules/games/components/main-most-pl
 import { MainDeveloperComponent } from './modules/games/components/main-developer/main-developer.component';
 import { MostPlayedCardComponent } from './modules/games/components/most-played-card/most-played-card.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-<<<<<<< HEAD
-import { MainContainerComponent } from './modules/games/components/MAIN-CONTAINER/main-container.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-=======
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
->>>>>>> b02cfd9a7dc1445583245376ec0d07758d4a3bd2
 
 @NgModule({
   declarations: [
@@ -34,12 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-<<<<<<< HEAD
-    FontAwesomeModule
-=======
     FontAwesomeModule,
     HttpClientModule
->>>>>>> b02cfd9a7dc1445583245376ec0d07758d4a3bd2
   ],
   providers: [],
   bootstrap: [AppComponent]
