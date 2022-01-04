@@ -1,0 +1,29 @@
+
+.card{
+    background-color: #25282D;
+    border-radius: 30px;
+    max-width: 50vw;
+    font-family: sans-serif;
+    margin: 40px 0 40px 80px;
+
+    img{
+        border-radius: 30px;
+        width: 380px;
+    }
+}
+.card-detail{
+    max-width: 40%;
+}
+.plat{
+    color: #A27CAF;
+}
+.pub{
+    color: #6F87A3;
+}
+button{
+    color: #2DD295;
+    background-color: rgba(0, 0, 0,0);
+    border: 4px solid #2DD295;
+    border-radius: 50px;
+    padding: 4px, 8px;
+}

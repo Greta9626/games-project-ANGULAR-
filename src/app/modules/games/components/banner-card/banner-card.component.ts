@@ -1,4 +1,6 @@
+import { IGame } from './../../models/game';
 import { Component, OnInit } from '@angular/core';
+import { GamesService } from '../../services/games.service';
 
 @Component({
   selector: 'app-banner-card',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./banner-card.component.scss']
 })
 export class BannerCardComponent implements OnInit {
+  bannerGame: number= 57;
+  bannerDetail!: IGame;
 
-  constructor() { }
+  constructor(private gamesService: GamesService) { }
 
   ngOnInit(): void {
-  }
-
-}
+    this.gamesService.getSingleGame(this.bannerGame).subscribe(
+      (data) => this.bannerDetail = data)
+    } 
+  }   
