@@ -8,13 +8,12 @@
 
 
   <div *ngIf="loadingSpinner" class="d-flex justify-content-center align-items-center" style="height: 300px;">
-    <img src="assets/img/Rolling-1s-200px.svg" alt="loading spinner" style="width:100px;">
+    <div class="spinner-border" role="status"></div>
   </div>
 
   <app-games-list *ngIf="!loadingSpinner" [gameList]="mostPlayedGames" [listStyle]="{
       type: 'col-4 mb-5',
       partialGamesCounter: 3,
-      mostPlayed: true,
       showViewMore: false,
       cardHeight: '280px' }">
   </app-games-list>

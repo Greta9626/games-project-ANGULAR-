@@ -1,1 +1,19 @@
-<p>banner-card works!</p>
+<div class="card d-flex flex-row justify-content-between" >
+
+    <div class="card-detail p-4">
+        <h1 class="card-title">{{bannerInput.title}}</h1>
+        <p class="card-subtitle font-weight-light">{{bannerInput.short_description}}</p>
+
+        <div class="d-flex justify-content-between">
+            <p class="plat">{{bannerInput.platform}}</p>
+            <p class="pub ">{{bannerInput.publisher}}</p>
+        </div>
+
+        <a href="{{bannerInput.game_url}}" target="_blank" class="font-weight-normal text-decoration-none"
+            id="btn-download">DOWNLOAD NOW</a>
+    </div>
+
+    <div>
+        <img src={{bannerInput.thumbnail}} class="card-img-top" alt="copertina gioco">
+    </div>
+</div>

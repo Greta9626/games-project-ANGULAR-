@@ -9,6 +9,7 @@
         <div class="spinner-border" role="status"></div>
     </div>
 
-    <app-games-list *ngIf="gamesByDeveloper.length > 0 && !loadingSpinner" [gameList]="gamesByDeveloper">
+    <app-games-list  *ngIf="gamesByDeveloper.length > 0 && !loadingSpinner" [gameList]="gamesByDeveloper"  [listStyle]="{
+        showViewMore: false}">
     </app-games-list>
 </div>

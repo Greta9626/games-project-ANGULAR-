@@ -7,7 +7,6 @@ interface GameListStyle{
   partialGamesCounter: number;
   type: string; //'col-3 mb-4' | 'col-4 mb-3';
   cardHeight: string;
-  mostPlayed: boolean;
 }
 
 @Component({
@@ -18,9 +17,8 @@ interface GameListStyle{
 export class GamesListComponent implements OnInit {
 
   _listStyle: GameListStyle = {
-    showViewMore: false,
+    showViewMore: true,
     partialGamesCounter: 8,
-    mostPlayed: false,
     type: 'col-3 mb-4',
     cardHeight: '240px'
   }
@@ -39,9 +37,9 @@ export class GamesListComponent implements OnInit {
 /*     interval(1000).subscribe( */
       /* () => { */
         this.partialGameList = this.gameList.slice(0, this._listStyle.partialGamesCounter);
-        if (this.gameList.length > 8 && !this._listStyle.mostPlayed) {
-          this._listStyle.showViewMore = true; // Il view more deve essere mostrato quando ho più di 8 elementi totali ma SOLO SE NON SIAMO NEI PRIMI 3 MOST PLAYED
-        }
+        /* if (this.gameList.length < 8) {
+          this._listStyle.showViewMore = true; */ // Il view more deve essere mostrato quando ho più di 8 elementi totali ma SOLO SE NON SIAMO NEI PRIMI 3 MOST PLAYED
+        
       /* } */
     /* ) */
   }

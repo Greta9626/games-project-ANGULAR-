@@ -1,3 +1,4 @@
+import { BannerCardComponent } from './components/banner-card/banner-card.component';
 import { MainDeveloperComponent } from './components/main-developer/main-developer.component';
 import { GamesListComponent } from './components/games-list/games-list.component';
 import { GameCardComponent } from './components/game-card/game-card.component';
@@ -29,6 +30,7 @@ import { MostPlayedCardComponent } from './components/most-played-card/most-play
     MostPlayedComponent,
     MainMostPlayedComponent,
     MostPlayedCardComponent,
+    BannerCardComponent
   ],
   imports: [
     CommonModule,

@@ -1,14 +1,22 @@
 <!-- TODO - BANNER -->
 
 <div class="container">
-  <div *ngIf="loadingSpinner < 2" class="d-flex justify-content-center align-items-center" style="height: 300px;">
-    <img src="assets/img/Rolling-1s-200px.svg" alt="loading spinner" style="width:100px;">
+  <div *ngIf="loadingSpinner < 2; else loadedGames" class="d-flex justify-content-center align-items-center"
+    style="height: 300px;">
+    <div class="spinner-border" role="status"></div>
   </div>
-  
-  <div *ngIf="loadingSpinner === 2" class="container mb-5">
-    <app-most-played-card [partialMostPlayed]="partialMostPlayed"></app-most-played-card>
-  </div>
-  
-  <h4 class="font-weight-bold mb-3">All Games <span class="font-weight-light">({{allGames.length}})</span></h4>
-  <app-games-list *ngIf="loadingSpinner === 2" [gameList]="allGames"></app-games-list>
+
+  <ng-template #loadedGames>
+    <div class="row mb-5">
+      <div class="col-8">
+        <app-banner-card [bannerInput]="bannerDetail"></app-banner-card>
+      </div>
+      <div class="col-4">
+        <app-most-played-card [partialMostPlayed]="partialMostPlayed"></app-most-played-card>
+      </div>
+    </div>
+
+    <h4 class="font-weight-bold mb-3">All Games <span class="font-weight-light">({{allGames.length}})</span></h4>
+    <app-games-list [gameList]="allGames"></app-games-list>
+  </ng-template>
 </div>

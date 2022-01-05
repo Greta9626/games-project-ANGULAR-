@@ -15,6 +15,8 @@ export class MainHomepageComponent implements OnInit {
   loadingSpinner: number = 0;
   
   subs: Subscription[] = [];
+  bannerGame: number= 57;
+  bannerDetail!: Game;
 
   constructor(private gameService: GamesService) { }
 
@@ -22,6 +24,7 @@ export class MainHomepageComponent implements OnInit {
     // TODO - chiamata singleGame per fortnite (se possibile spostarla qui invece che nel componente specifico)
     this.subs.push(this.gameService.getAllGames().subscribe(data => {this.allGames = data; this.loadingSpinner++}));
     this.subs.push(this.gameService.getMostPlayedGames().subscribe(data => {this.partialMostPlayed = data.slice(0, 3); this.loadingSpinner++}));
+    this.subs.push(this.gameService.getSingleGame(this.bannerGame).subscribe((data) => {this.bannerDetail = data; this.loadingSpinner++}))
     // CHIAMATA DEL TODO (riga 23)
     //this.subs.push(this.gameService.getSingleGame(57).subscribe(data => {this.singleGame = data; this.loadingSpinner++}));
   }
