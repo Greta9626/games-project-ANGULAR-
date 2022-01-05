@@ -32,7 +32,8 @@ export class Game{
     public publisher = '',
     public developer = '',
     public release_date = '',
-    public freetogame_profile_url = ''
+    public freetogame_profile_url = '',
+    public description = '',
     ) {}
 
     public static Build(game: IGame){
@@ -47,7 +48,8 @@ export class Game{
         game.publisher,
         game.developer,
         game.release_date,
-        game.freetogame_profile_url
+        game.freetogame_profile_url,
+        game.description,
       );
     }
 }

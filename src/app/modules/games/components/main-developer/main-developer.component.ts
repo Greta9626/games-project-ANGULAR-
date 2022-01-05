@@ -1,4 +1,4 @@
-import { IGame } from './../../models/game';
+import { Game, IGame } from './../../models/game';
 import { Subscription } from 'rxjs';
 import { GamesService } from './../../services/games.service';
 import { Component, OnInit } from '@angular/core';
@@ -9,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-developer.component.scss'],
 })
 export class MainDeveloperComponent implements OnInit {
-  allGames: IGame[] = [];
+  allGames: Game[] = [];
   developers: string[] = [];
   filter!: string;
-  gamesByDeveloper!: IGame[];
+  gamesByDeveloper: Game[] = [];
+  loadingSpinner: boolean = false;
   subs: Subscription[] = [];
 
   constructor(private gamesService: GamesService) {}
@@ -31,10 +32,10 @@ export class MainDeveloperComponent implements OnInit {
   }
 
   onChangeSelect(): void {
+    this.loadingSpinner = true;
     this.gamesByDeveloper = this.allGames.filter(
       (game) => game.developer === this.filter
-    )
-    console.log(this.filter);
-    console.log(this.gamesByDeveloper);
+    );
+    setTimeout(() => this.loadingSpinner = false, 1000);
   }
 }

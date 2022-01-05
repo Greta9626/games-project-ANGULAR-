@@ -10,11 +10,12 @@ import { GamesService } from '../../services/games.service';
 export class MainMostPlayedComponent implements OnInit {
 
   mostPlayedGames!: Game[];
+  loadingSpinner: boolean = true;
 
   constructor(private gameService: GamesService) { }
 
   ngOnInit(): void {
-    this.gameService.getMostPlayedGames().subscribe(data => this.mostPlayedGames = data);
+    this.gameService.getMostPlayedGames().subscribe(data => {this.mostPlayedGames = data; this.loadingSpinner = false});
   }
 
 }

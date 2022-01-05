@@ -1,6 +1,14 @@
 <!-- TODO - BANNER -->
-<div class="container mb-2">
 
-  <app-most-played-card [partialMostPlayed]="partialMostPlayed"></app-most-played-card>
+<div class="container">
+  <div *ngIf="loadingSpinner < 2" class="d-flex justify-content-center align-items-center" style="height: 300px;">
+    <img src="assets/img/Rolling-1s-200px.svg" alt="loading spinner" style="width:100px;">
+  </div>
+  
+  <div *ngIf="loadingSpinner === 2" class="container mb-5">
+    <app-most-played-card [partialMostPlayed]="partialMostPlayed"></app-most-played-card>
+  </div>
+  
+  <h4 class="font-weight-bold mb-3">All Games <span class="font-weight-light">({{allGames.length}})</span></h4>
+  <app-games-list *ngIf="loadingSpinner === 2" [gameList]="allGames"></app-games-list>
 </div>
-<app-games-list [gameList]="allGames"></app-games-list>

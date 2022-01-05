@@ -12,15 +12,20 @@ export class MainHomepageComponent implements OnInit {
 
   allGames!: Game[];
   partialMostPlayed!: Game[];
-
+  loadingSpinner: number = 0;
+  
   subs: Subscription[] = [];
 
   constructor(private gameService: GamesService) { }
 
   ngOnInit(): void {
-    this.subs.push(this.gameService.getAllGames().subscribe(data => this.allGames = data));
-    this.subs.push(this.gameService.getMostPlayedGames().subscribe(data => this.partialMostPlayed = data.slice(0, 3)));
+    // TODO - chiamata singleGame per fortnite (se possibile spostarla qui invece che nel componente specifico)
+    this.subs.push(this.gameService.getAllGames().subscribe(data => {this.allGames = data; this.loadingSpinner++}));
+    this.subs.push(this.gameService.getMostPlayedGames().subscribe(data => {this.partialMostPlayed = data.slice(0, 3); this.loadingSpinner++}));
+    // CHIAMATA DEL TODO (riga 23)
+    //this.subs.push(this.gameService.getSingleGame(57).subscribe(data => {this.singleGame = data; this.loadingSpinner++}));
   }
+
 
   ngOnDestroy(){
     this.subs.map(sub => sub.unsubscribe());

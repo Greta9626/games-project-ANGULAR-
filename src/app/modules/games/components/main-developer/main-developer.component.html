@@ -1,10 +1,14 @@
-<p>main-developer works!</p>
-
-<div>
-    <select class="form-control" [(ngModel)]="filter" (change)="onChangeSelect()">
-        <option *ngFor="let developer of developers" value="{{developer.trim()}}">{{developer.trim()}}</option>
+<div class="container">
+    <select class="form-control col-12 col-lg-6 mb-5" [(ngModel)]="filter" (change)="onChangeSelect()" required>
+        <option class="placeholder" value="undefined">SELECT A DEVELOPER</option>
+        <option *ngFor="let developer of developers" value="{{developer.trim()}}" placeholder>{{developer.trim()}}
+        </option>
     </select>
 
-    <!-- TODO - quando viene fixato il componente delle card, gli passiamo l'array gamesByDeveloper -->
-    <app-games-list [gameList]="gamesByDeveloper"></app-games-list>
+    <div *ngIf="loadingSpinner" class="d-flex justify-content-center align-items-center" style="height: 300px;">
+        <div class="spinner-border" role="status"></div>
+    </div>
+
+    <app-games-list *ngIf="gamesByDeveloper.length > 0 && !loadingSpinner" [gameList]="gamesByDeveloper">
+    </app-games-list>
 </div>
