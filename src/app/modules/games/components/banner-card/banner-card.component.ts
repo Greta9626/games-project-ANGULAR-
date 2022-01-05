@@ -8,13 +8,11 @@ import { GamesService } from '../../services/games.service';
   styleUrls: ['./banner-card.component.scss']
 })
 export class BannerCardComponent implements OnInit {
-  bannerGame: number= 57;
-  bannerDetail!: IGame;
+  
 
-  constructor(private gamesService: GamesService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.gamesService.getSingleGame(this.bannerGame).subscribe(
-      (data) => this.bannerDetail = data)
+  
     } 
   }   

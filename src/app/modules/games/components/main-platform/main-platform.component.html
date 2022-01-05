@@ -1,5 +1,17 @@
- <button (click)="getByPlatform('all')">All</button>
- <button (click)="getByPlatform('browser')">Browser</button>
- <button (click)="getByPlatform('pc')">Pc</button>
+<div class="text-center m-5">
+    <button (click)="getByPlatform('all')">All</button>
+    <button (click)="getByPlatform('browser')">Browser</button>
+    <button (click)="getByPlatform('pc')">Pc</button>
+</div>
 
- 
+ <div class="d-flex flex-column">
+    <div class="container">
+        <div class="row">
+            <div *ngFor="let game of gameList" [ngClass]="_listStyle.type">
+                <app-game-card [gameData]="game" [cardHeight]="_listStyle.cardHeight"></app-game-card>
+            </div>
+        </div>
+    </div>
+
+    <!-- <a *ngIf="_listStyle.showViewMore" class="btn d-flex justify-content-center" (click)="viewMore()">View More</a>  -->
+</div>
