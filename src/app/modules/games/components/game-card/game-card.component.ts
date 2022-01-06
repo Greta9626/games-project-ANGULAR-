@@ -1,7 +1,8 @@
+import { ModalComponent } from './../modal/modal.component';
 import { GamesService } from './../../services/games.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
-import { IGame } from './../../models/game';
+import { Game } from './../../models/game';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -10,35 +11,28 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./game-card.component.scss'],
 })
 export class GameCardComponent implements OnInit {
-  @Input() gameData!: IGame;
-  @Input() cardHeight = "240px";
+  @Input() gameData!: Game;
+  @Input() cardHeight = '240px';
 
-  allGames!: IGame[];
-  gameDetail!: IGame;
+  allGames!: Game[];
   subs: Subscription[] = [];
+  openModal: boolean = false;
 
   constructor(
     private modalService: NgbModal,
-    private gamesService: GamesService
   ) {}
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
-  open(content: any) {
-    this.subs.push(
-      this.gamesService.getSingleGame(this.gameData.id).subscribe(
-        (data) => (
-          (this.gameDetail = data),
-          console.log(data),
-          this.modalService.open(content, {
-            ariaLabelledBy: 'game-info',
-            centered: true,
-            windowClass: 'modal-custom',
-          })
-        )
-      )
-    );
+  open(): void {
+    /* console.log(content) */
+    this.openModal = true;
+    const modalCall = this.modalService.open(ModalComponent, {
+      ariaLabelledBy: 'game-info',
+      centered: true,
+      windowClass: 'modal-custom',
+    });
+
+    modalCall.componentInstance.gameShortData = this.gameData;
   }
 }

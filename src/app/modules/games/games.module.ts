@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MainMostPlayedComponent } from './components/main-most-played/main-most-played.component';
 import { FormsModule } from '@angular/forms';
 import { MostPlayedCardComponent } from './components/most-played-card/most-played-card.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { MostPlayedCardComponent } from './components/most-played-card/most-play
     MostPlayedComponent,
     MainMostPlayedComponent,
     MostPlayedCardComponent,
-    BannerCardComponent
+    BannerCardComponent,
+    ModalComponent
   ],
   imports: [
     CommonModule,

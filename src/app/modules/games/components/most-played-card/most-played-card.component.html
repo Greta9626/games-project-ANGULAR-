@@ -1,5 +1,5 @@
 <div class="card">
-  <div class="mx-3 my-2">
+  <div class="mx-3 mt-2">
     <div class="d-flex justify-content-between card-buttons">
       <h5 class="align-self-baseline">Most Played</h5>
       <a href="#" class="btn align-self-baseline" routerLink="../most-played">View More</a>
@@ -12,7 +12,7 @@
           <h6 class="font-weight-normal" style="color: #6F87A3;">{{game.developer}}</h6>
           <h6 class="font-weight-normal">{{game.platform}}</h6>
         </div>
-        <a class="text-decoration-none font-weight-normal align-self-baseline" id="btn-download">Download Now
+        <a class="text-decoration-none font-weight-normal align-self-baseline" id="btn-download" (click)="open(game)">More info
         </a>
       </div>
     </div>

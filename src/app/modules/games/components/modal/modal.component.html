@@ -1,0 +1,28 @@
+<div *ngIf="loadingSpinner; else modalView" class="d-flex justify-content-center align-items-center"
+    style="height: 300px;">
+    <div class="spinner-border" role="status"></div>
+</div>
+
+<ng-template #modalView>
+    <div class="modal-header position-relative d-flex flex-row p-0 border-0">
+        <img src={{gameLongData.thumbnail}} class="card-img-top" alt="copertina gioco">
+        <button type="button" class="btn btn-danger" (click)="modal.close('Cross click')">X</button>
+    </div>
+
+    <!-- body -->
+    <div class="modal-body">
+        <div class="d-flex justify-content-between">
+            <h4 class="modal-title" id="game-info">{{gameLongData.title}}</h4>
+            <a href="{{gameLongData.game_url}}" target="_blank" class="font-weight-normal text-decoration-none"
+                id="btn-download">DOWNLOAD NOW</a>
+        </div>
+
+        <div class="d-flex flex-row mb-2">
+            <h6 class="badge badge-primary py-1 px-2 mr-3" id="genre">{{gameLongData.genre | uppercase}}</h6>
+            <h6 class="mr-3 my-1" id="platform">{{gameLongData.platform | uppercase}}</h6>
+            <h6 class="mr-3 my-1 font-weight-normal" id="developer">{{gameLongData.developer}}</h6>
+        </div>
+
+        <p id="game-info" class="font-weight-light">{{gameLongData.description}}</p>
+    </div>
+</ng-template>

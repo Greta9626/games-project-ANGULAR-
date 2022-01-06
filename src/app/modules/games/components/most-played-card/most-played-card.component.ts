@@ -1,3 +1,5 @@
+import { ModalComponent } from './../modal/modal.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Component, Input, OnInit } from '@angular/core';
 import { Game } from '../../models/game';
 
@@ -10,9 +12,23 @@ export class MostPlayedCardComponent implements OnInit {
 
   @Input() partialMostPlayed!: Game[];
 
-  constructor() { }
+  openModal: boolean = false;
+
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
+  }
+
+  open(game: Game): void {
+    /* console.log(content) */
+    this.openModal = true;
+    const modalCall = this.modalService.open(ModalComponent, {
+      ariaLabelledBy: 'game-info',
+      centered: true,
+      windowClass: 'modal-custom',
+    });
+    
+    modalCall.componentInstance.gameShortData = game;
   }
 
 }
