@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MainMostPlayedComponent } from './components/main-most-played/main-most-played.component';
 import { FormsModule } from '@angular/forms';
 import { MostPlayedCardComponent } from './components/most-played-card/most-played-card.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -30,13 +32,15 @@ import { MostPlayedCardComponent } from './components/most-played-card/most-play
     MostPlayedComponent,
     MainMostPlayedComponent,
     MostPlayedCardComponent,
-    BannerCardComponent
+    BannerCardComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
     GamesRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ]
 })
 export class GamesModule { }
