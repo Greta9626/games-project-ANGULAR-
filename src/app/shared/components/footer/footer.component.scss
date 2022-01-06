@@ -1,0 +1,30 @@
+.imglogo {
+  width: 30px;
+  height: 30px;
+  background-color: #8f8f8f;
+  border-radius: 8px;
+}
+
+.socialogos a {
+  width: 41px;
+  height: 41px;
+  background-color: #282828;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #F9F9F9;
+}
+
+
+footer {
+  background-color: #1c1d21;
+  border-top: 2px solid black;
+  h5{
+    color: #F9F9F9;
+  }
+  a{
+      color: #8f8f8f;
+  }
+}

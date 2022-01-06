@@ -17,6 +17,7 @@ import { MainMostPlayedComponent } from './components/main-most-played/main-most
 import { FormsModule } from '@angular/forms';
 import { MostPlayedCardComponent } from './components/most-played-card/most-played-card.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { ModalComponent } from './components/modal/modal.component';
     CommonModule,
     GamesRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ]
 })
 export class GamesModule { }
