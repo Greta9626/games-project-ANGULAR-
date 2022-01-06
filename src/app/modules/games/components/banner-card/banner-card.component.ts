@@ -1,4 +1,4 @@
-import { Game, IGame } from './../../models/game';
+import { Game } from './../../models/game';
 import { Component, Input, OnInit } from '@angular/core';
 import { GamesService } from '../../services/games.service';
 
@@ -8,11 +8,11 @@ import { GamesService } from '../../services/games.service';
   styleUrls: ['./banner-card.component.scss']
 })
 export class BannerCardComponent implements OnInit {
-  
+
   @Input() bannerInput!: Game;
 
-  constructor() { }
 
-  ngOnInit(): void {
-    } 
+  constructor(private gamesService: GamesService) { }
+
+  ngOnInit(): void {} 
   }   
