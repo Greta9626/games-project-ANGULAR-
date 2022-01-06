@@ -22,7 +22,9 @@ export class MainHomepageComponent implements OnInit {
 
   ngOnInit(): void {
     this.subs.push(this.gameService.getAllGames().subscribe(data => {this.allGames = data; this.loadingSpinner++}));
+
     this.subs.push(this.gameService.getMostPlayedGames().subscribe(data => {this.partialMostPlayed = data.slice(0, 3); this.loadingSpinner++}));
+    
     this.subs.push(this.gameService.getSingleGame(this.bannerGame).subscribe((data) => {this.bannerDetail = data; this.loadingSpinner++}))
     // CHIAMATA DEL TODO (riga 23)
     //this.subs.push(this.gameService.getSingleGame(57).subscribe(data => {this.singleGame = data; this.loadingSpinner++}));
