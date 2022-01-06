@@ -1,6 +1,5 @@
 import { Game } from './../../models/game';
 import { Component, Input, OnInit } from '@angular/core';
-import { GamesService } from '../../services/games.service';
 
 @Component({
   selector: 'app-banner-card',
@@ -12,7 +11,7 @@ export class BannerCardComponent implements OnInit {
   @Input() bannerInput!: Game;
 
 
-  constructor(private gamesService: GamesService) { }
+  constructor() { }
 
   ngOnInit(): void {} 
   }   

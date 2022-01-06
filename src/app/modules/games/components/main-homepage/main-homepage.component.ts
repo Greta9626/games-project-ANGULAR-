@@ -15,7 +15,7 @@ export class MainHomepageComponent implements OnInit {
   loadingSpinner: number = 0;
   
   subs: Subscription[] = [];
-  bannerGame: number= 57;
+  bannerGame: number= 466;
   bannerDetail!: Game;
 
   constructor(private gameService: GamesService) { }

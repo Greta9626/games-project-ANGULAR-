@@ -20,6 +20,18 @@ body {
   cursor: pointer;
 }
 
+.badge {
+  border-radius: 20px;
+  background-color: #f06220;
+  font-weight: 500;
+}
+
+.spinner-border {
+  width: 4rem;
+  height: 4rem;
+  color: #2dd295;
+}
+
 .modal-custom .modal-content {
   border: 0px none #ffffff;
   border-radius: 24px;

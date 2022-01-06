@@ -1,23 +1,26 @@
-.card{
-    background-color: #25282D;
+.card {
+  background-color: #25282d;
+  border-radius: 20px;
+  height: 370px;
+  img {
     border-radius: 20px;
-    img{
-        border-radius: 20px;
-        width: 380px;
-        margin: 0;
-    }
+    height: 100%;
+    margin: 0;
+    object-fit: cover;
+  }
 }
-
-.plat{
-    color: #A27CAF;
+.plat {
+  color: #a27caf;
 }
-.pub{
-    color: #6F87A3;
+.pub {
+  color: #6f87a3;
 }
 
 #btn-download-border {
-    color: #2DD295;
-    border: 4px solid #2DD295;
-    border-radius: 20px;
-    padding: 6px;
-  }
+  color: #2dd295;
+  border: 4px solid #2dd295;
+  border-radius: 20px;
+  padding: 6px;
+}
+
+
