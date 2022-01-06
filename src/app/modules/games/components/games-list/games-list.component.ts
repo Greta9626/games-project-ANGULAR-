@@ -19,7 +19,7 @@ export class GamesListComponent implements OnInit {
   _listStyle: GameListStyle = {
     showViewMore: true,
     partialGamesCounter: 8,
-    type: 'col-3 mb-4',
+    type: 'col-lg-3 col-sm-12 mb-4',
     cardHeight: '240px'
   }
 

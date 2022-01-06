@@ -1,9 +1,11 @@
 <div class="card">
+
   <div class="mx-3 mt-2">
     <div class="d-flex justify-content-between card-buttons">
       <h5 class="align-self-baseline">Most Played</h5>
       <a href="#" class="btn align-self-baseline" routerLink="../most-played">View More</a>
     </div>
+
     <div class="card-item" *ngFor="let game of partialMostPlayed">
       <div class="d-flex justify-content-between my-3">
         <img src={{game.thumbnail}} class="card-img" alt="copertina gioco">
@@ -12,9 +14,12 @@
           <h6 class="font-weight-normal" style="color: #6F87A3;">{{game.developer}}</h6>
           <h6 class="font-weight-normal">{{game.platform}}</h6>
         </div>
+
         <a class="text-decoration-none font-weight-normal align-self-baseline" id="btn-download" (click)="open(game)">More info
         </a>
+        
       </div>
     </div>
+    
   </div>
 </div>

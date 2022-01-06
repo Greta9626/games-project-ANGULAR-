@@ -18,7 +18,6 @@ export class ModalComponent implements OnInit {
   subs: Subscription[] = [];
 
   constructor(
-    private modalService: NgbModal,
     private gamesService: GamesService,
     public modal: NgbActiveModal,
   ) {}
