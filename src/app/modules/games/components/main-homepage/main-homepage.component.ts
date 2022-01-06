@@ -21,7 +21,6 @@ export class MainHomepageComponent implements OnInit {
   constructor(private gameService: GamesService) { }
 
   ngOnInit(): void {
-    // TODO - chiamata singleGame per fortnite (se possibile spostarla qui invece che nel componente specifico)
     this.subs.push(this.gameService.getAllGames().subscribe(data => {this.allGames = data; this.loadingSpinner++}));
     this.subs.push(this.gameService.getMostPlayedGames().subscribe(data => {this.partialMostPlayed = data.slice(0, 3); this.loadingSpinner++}));
     this.subs.push(this.gameService.getSingleGame(this.bannerGame).subscribe((data) => {this.bannerDetail = data; this.loadingSpinner++}))

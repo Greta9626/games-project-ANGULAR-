@@ -14,13 +14,13 @@ export class GamesService {
     private readonly http: HttpClient
   ) { }
 
-  // Gets all games from API
+  // Gets ALL GAMES from API
   getAllGames(): Observable<Game[]> {
     return this.http.get<IGame[]>(`${environment.apiURL}`)
       .pipe(map( response => response.map(game => Game.Build(game))));
   }
 
-  // Gets all games of a category (action, shooter, etc.) from API
+  // Gets all games of a CATEGORY (action, shooter, etc.) from API
   getGamesByCategory(category: string): Observable<Game[]> {
     const param = new HttpParams().set('category', category);
 
@@ -28,7 +28,7 @@ export class GamesService {
       .pipe(map( response => response.map(game => Game.Build(game))));
   }
 
-  // Gets all games of a platform (pc, browser, other) from API
+  // Gets all games of a PLATFORM (pc, browser, other) from API
   getGamesByPlatform(platform: string): Observable<Game[]> {
     const param = new HttpParams().set('platform', platform);
 
@@ -36,11 +36,7 @@ export class GamesService {
       .pipe(map( response => response.map(game => Game.Build(game))));
   }
 
-  // TODO:
-  //  it's time consuming getting all games, it should block the call after
-  //  getting 10 games or whatever number we need for the project
-
-  // Returns a list of most played games in DESC. order from API
+  // Returns a list of MOST PLAYED games in DESC. order from API
   getMostPlayedGames(): Observable<Game[]> {
     const param = new HttpParams().set('sort-by', 'popularity');
 
@@ -48,6 +44,7 @@ export class GamesService {
       .pipe(map( response => response.map(game => Game.Build(game))));
   }
 
+  // Returns a SINGLE GAME with specific info
   getSingleGame(id: number): Observable<Game> {
     const param = new HttpParams().set('id', id);
 

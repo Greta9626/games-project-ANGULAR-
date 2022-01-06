@@ -1,3 +1,4 @@
+import { MainPlatformComponent } from './components/main-platform/main-platform.component';
 import { BannerCardComponent } from './components/banner-card/banner-card.component';
 import { MainDeveloperComponent } from './components/main-developer/main-developer.component';
 import { GamesListComponent } from './components/games-list/games-list.component';
@@ -13,13 +14,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { MainMostPlayedComponent } from './components/main-most-played/main-most-played.component';
-<<<<<<< HEAD
 import { FormsModule } from '@angular/forms';
 import { MostPlayedCardComponent } from './components/most-played-card/most-played-card.component';
 import { ModalComponent } from './components/modal/modal.component';
-=======
-import { BannerCardComponent } from './components/banner-card/banner-card.component';
->>>>>>> feature-Lucia-banner
 
 
 @NgModule({
@@ -34,13 +31,10 @@ import { BannerCardComponent } from './components/banner-card/banner-card.compon
     GamesListComponent,
     MostPlayedComponent,
     MainMostPlayedComponent,
-<<<<<<< HEAD
     MostPlayedCardComponent,
+    MainPlatformComponent,
     BannerCardComponent,
-    ModalComponent
-=======
-    BannerCardComponent
->>>>>>> feature-Lucia-banner
+    ModalComponent,
   ],
   imports: [
     CommonModule,

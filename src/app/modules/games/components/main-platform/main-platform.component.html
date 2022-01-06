@@ -1,1 +1,13 @@
-<p>main-platform works!</p>
+<div class="container">
+    <div class="d-flex justify-content-center mb-3">
+        <a class="btn" (click)="filterButton('all')" [class.active]="activeButton === 'all'">All</a> 
+        <a class="btn" (click)="filterButton('browser')" [class.active]="activeButton === 'browser'">Browser</a> 
+        <a class="btn" (click)="filterButton('pc')" [class.active]="activeButton === 'pc'">Pc</a>
+    </div>
+
+    <div *ngIf="loadingSpinner" class="d-flex justify-content-center align-items-center" style="height: 300px;">
+        <div class="spinner-border" role="status"></div>
+    </div>
+
+    <app-games-list *ngIf="gamesByPlatform.length > 0 && !loadingSpinner" [gameList]="gamesByPlatform"></app-games-list>
+</div>
