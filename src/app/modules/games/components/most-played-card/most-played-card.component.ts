@@ -20,7 +20,6 @@ export class MostPlayedCardComponent implements OnInit {
   }
 
   open(game: Game): void {
-    /* console.log(content) */
     this.openModal = true;
     const modalCall = this.modalService.open(ModalComponent, {
       ariaLabelledBy: 'game-info',

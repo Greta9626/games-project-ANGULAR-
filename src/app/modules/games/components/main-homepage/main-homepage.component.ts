@@ -19,7 +19,7 @@ export class MainHomepageComponent implements OnInit {
 
   loadingAboveTheFold: boolean = false;
 
-  bannerGame: number = 59;
+  bannerGame: number = 29;
   bannerDetail!: Game;
 
   subs: Subscription[] = [];
