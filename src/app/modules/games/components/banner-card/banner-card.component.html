@@ -1,26 +1,21 @@
-<div class="card d-flex flex-row justify-content-between ">
-    <div class="row">
+<div class="card d-flex flex-row justify-content-between p-2">
+    <div class="row py-5">
         <div class="card-detail px-5">
             <h1 class="card-title">{{bannerInput.title}}</h1>
             <p class="card-subtitle font-weight-light  mb-2">{{bannerInput.short_description}}</p>
 
-            <div class="d-flex justify-content-between mb-4">
+            <div class="d-flex justify-content-between mb-2">
                 <p class="plat">{{bannerInput.platform}}</p>
                 <p class="pub ">{{bannerInput.publisher}}</p>
             </div>
 
-            <a href="{{bannerInput.game_url}}" target="_blank" class="font-weight-normal text-decoration-none"
-                id="btn-download-border">DOWNLOAD NOW</a>
+            <div class="d-flex justify-content-between">
+                <a (click)="open()" class="stretched-link font-weight-normal text-decoration-none" id="btn-download">MORE INFO</a>
+            </div>
         </div>
     </div>
 
     <div>
-        <img src="https://asset.vg247.com/valorant_keyart_new_black_1.jpg/BROK/resize/1920x1920%3E/format/jpg/quality/80/valorant_keyart_new_black_1.jpg" class="card-img-top" alt="copertina gioco">
+        <img src={{bannerInput.thumbnail}} class="card-img-top" alt="copertina gioco">
     </div>
 </div>
-
-
-
-
-
-<!-- <div><img src={{bannerInput.thumbnail}} class="card-img-top" alt="copertina gioco"></div> -->

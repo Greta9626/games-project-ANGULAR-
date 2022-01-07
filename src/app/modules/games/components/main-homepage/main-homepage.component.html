@@ -1,6 +1,11 @@
+<div *ngIf="loadingAboveTheFold">
+  <app-above-the-fold [aboveTheFoldInput]="aboveTheFoldDetail"></app-above-the-fold>
+</div>
+
 <div class="container">
-  <div *ngIf="loadingSpinner < 2; else loadedGames" class="d-flex justify-content-center align-items-center"
+  <div *ngIf="loadingSpinner < 3; else loadedGames" class="d-flex justify-content-center align-items-center"
     style="height: 300px;">
+    <!-- loadingSpinner < 2 -> lo scriviamo perché nel TS abbiamo messo 3 chiamate e lo spinner deve essere mostrato finchè tutte e 3 non rispondono; a quel punto, mostro l'ngTemplate 'loadedGames' -->
     <div class="spinner-border" role="status"></div>
   </div>
 
@@ -13,8 +18,11 @@
         <app-most-played-card [partialMostPlayed]="partialMostPlayed"></app-most-played-card>
       </div>
     </div>
-
-    <h4 class="font-weight-bold mb-3">All Games <span class="font-weight-light">({{allGames.length}})</span></h4>
-    <app-games-list [gameList]="allGames"></app-games-list>
+    
+    <div class="position-relative">
+      <p class="font-weight-bold position-absolute" id="back-text">PLAY NOW</p>
+      <h4 class="font-weight-bold mb-3">All Games <span class="font-weight-light">({{allGames.length}})</span></h4>
+      <app-games-list [gameList]="allGames"></app-games-list>
+    </div>
   </ng-template>
 </div>

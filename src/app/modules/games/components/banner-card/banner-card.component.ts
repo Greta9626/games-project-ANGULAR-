@@ -1,3 +1,5 @@
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalComponent } from './../modal/modal.component';
 import { Game } from './../../models/game';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -9,9 +11,20 @@ import { Component, Input, OnInit } from '@angular/core';
 export class BannerCardComponent implements OnInit {
 
   @Input() bannerInput!: Game;
+  openModal: boolean = false;
 
+  constructor(private modalService: NgbModal) { }
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {} 
+  open(): void {
+    this.openModal = true;
+    const modalCall = this.modalService.open(ModalComponent, {
+      ariaLabelledBy: 'game-info',
+      centered: true,
+      windowClass: 'modal-custom',
+    });
+
+    modalCall.componentInstance.gameShortData = this.bannerInput;
+  }
   }   

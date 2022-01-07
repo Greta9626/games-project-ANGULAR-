@@ -1,21 +1,33 @@
-<header class="d-flex justify-content-between">
+<nav class="d-flex justify-content-between fixed-top">
 
-    <div class="pages d-flex justify-content-around align-items-center p-4">
-        <div class="logo mx-5"></div>
-        <a routerLink="games/homepage" class="mx-4" >HOME</a>
-        <a routerLink="games/platform" class="mx-4">PLATFORM</a>
-        <a routerLink="games/most-played" class="mx-4">MOST PLAYED</a>
-        <a routerLink="games/developer" class="mx-4" >DEVELOPER</a>
+    <div class="pages d-flex justify-content-around align-items-center px-3">
+        <div class="mx-5">
+            <img class="logo" src="/assets/img/logo.png">
+        </div>
+        <div [class.border-nav]="activeButton === 'homepage'" class="h-100 d-flex align-items-center">
+            <a routerLink="games/homepage" class="mx-4" (click)="clickNavOption('homepage')"
+                [class.active]="activeButton === 'homepage'">HOME</a>
+                <!-- quando activeButton è uguale a home - cioè quando clicco sul bottone home o quando ricarico la pagina e sono su home - mi assegna la classe border-nav al div e active ad a -->
+        </div>
 
+        <div [class.border-nav]="activeButton === 'platform'" class="h-100 d-flex align-items-center">
+            <a routerLink="games/platform" class="mx-4" (click)="clickNavOption('platform')"
+                [class.active]="activeButton === 'platform'">PLATFORM</a>
+        </div>
+
+        <div [class.border-nav]="activeButton === 'most-played'" class="h-100 d-flex align-items-center">
+            <a routerLink="games/most-played" class="mx-4" (click)="clickNavOption('most-played')"
+                [class.active]="activeButton === 'most-played'">MOST PLAYED</a>
+        </div>
+
+        <div [class.border-nav]="activeButton === 'developer'" class="h-100 d-flex align-items-center">
+            <a routerLink="games/developer" class="mx-4" (click)="clickNavOption('developer')"
+                [class.active]="activeButton === 'developer'">DEVELOPER</a>
+        </div>
     </div>
-
 
     <div class="srcbar p-4 mx-5">
-        <input type="text" placeholder="Search">
-
+        <!-- <fa-icon [icon]="searchLogo"></fa-icon> -->
+        <input type="text" placeholder="Search" class="px-3 py-1 font-weight-light">
     </div>
-
-
-
-
-</header>
+</nav>

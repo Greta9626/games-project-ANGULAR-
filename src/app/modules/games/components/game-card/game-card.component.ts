@@ -1,8 +1,8 @@
-import { ModalComponent } from './../modal/modal.component';
-import { GamesService } from './../../services/games.service';
+import { ModalComponent } from '../modal/modal.component';
+import { GamesService } from '../../services/games.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
-import { Game } from './../../models/game';
+import { Game } from '../../models/game';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -15,7 +15,6 @@ export class GameCardComponent implements OnInit {
   @Input() cardHeight = '240px';
 
   allGames!: Game[];
-  subs: Subscription[] = [];
   openModal: boolean = false;
 
   constructor(
@@ -25,7 +24,6 @@ export class GameCardComponent implements OnInit {
   ngOnInit(): void {}
 
   open(): void {
-    /* console.log(content) */
     this.openModal = true;
     const modalCall = this.modalService.open(ModalComponent, {
       ariaLabelledBy: 'game-info',

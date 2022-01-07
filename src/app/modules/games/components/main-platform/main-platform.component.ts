@@ -10,10 +10,10 @@ import { GamesService } from '../../services/games.service';
 })
 export class MainPlatformComponent implements OnInit {
 
-  subs: Subscription[] = [];
+  sub!: Subscription;
   gamesByPlatform: Game[] = []
   loadingSpinner: boolean = true;
-  activeButton = 'all'
+  activeButton: string = 'all'
 
   constructor(private gameService: GamesService) { }
 
@@ -25,8 +25,12 @@ export class MainPlatformComponent implements OnInit {
     this.activeButton = platform;
     this.loadingSpinner = true;
     this.gamesByPlatform = [],
-    this.subs.push(this.gameService.getGamesByPlatform(platform).subscribe(data => {this.gamesByPlatform = data; this.loadingSpinner = false}));
-    
+
+    this.sub = (this.gameService.getGamesByPlatform(platform).subscribe(data => {this.gamesByPlatform = data; this.loadingSpinner = false}));
+  }
+
+  ngOnDestroy(){
+    this.sub.unsubscribe();
   }
 
 }

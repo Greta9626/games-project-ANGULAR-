@@ -10,12 +10,19 @@
   src: url(assets/fonts/MADE-Tommy-Soft-Bold.otf) format(opentype);
 }
 
+@font-face {
+  font-family: 'MADE Tommy Soft Outline';
+  src: url(assets/fonts/MADE-Tommy-Soft-Bold-Outline.otf) format(opentype);
+}
+
 body {
   font-family: "MADE Tommy Soft";
+  background-color: #1F212B;
+  padding-top: 82px;
 }
 
 #btn-download {
-  color: #2DD295;
+  color: #2dd295;
   padding-top: 7px;
   cursor: pointer;
 }

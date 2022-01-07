@@ -2,7 +2,7 @@ import { Game, IGame } from './../../models/game';
 import { Component, Input, OnInit } from '@angular/core';
 import { interval } from 'rxjs';
 
-interface GameListStyle{
+interface GameListStyle {
   showViewMore: boolean;
   partialGamesCounter: number;
   type: string; //'col-3 mb-4' | 'col-4 mb-3';
@@ -12,41 +12,39 @@ interface GameListStyle{
 @Component({
   selector: 'app-games-list',
   templateUrl: './games-list.component.html',
-  styleUrls: ['./games-list.component.scss']
+  styleUrls: ['./games-list.component.scss'],
 })
 export class GamesListComponent implements OnInit {
-
   _listStyle: GameListStyle = {
     showViewMore: true,
     partialGamesCounter: 8,
     type: 'col-lg-3 col-sm-12 mb-4',
-    cardHeight: '240px'
-  }
+    cardHeight: '240px',
+  };
 
-  @Input() set listStyle(value: Partial<GameListStyle>){
+  @Input() set listStyle(value: Partial<GameListStyle>) {
     this._listStyle = { ...this._listStyle, ...value };
   }
   @Input() gameList!: Game[];
 
   partialGameList!: Game[];
 
-  constructor() { }
+  constructor() {}
 
-  /* TODO: provare con Async */
   ngOnInit(): void {
-/*     interval(1000).subscribe( */
-      /* () => { */
-        this.partialGameList = this.gameList.slice(0, this._listStyle.partialGamesCounter);
-        /* if (this.gameList.length < 8) {
-          this._listStyle.showViewMore = true; */ // Il view more deve essere mostrato quando ho più di 8 elementi totali ma SOLO SE NON SIAMO NEI PRIMI 3 MOST PLAYED
-        
-      /* } */
-    /* ) */
+    this.partialGameList = this.gameList.slice(
+      0,
+      this._listStyle.partialGamesCounter
+    );
   }
 
   viewMore(): void {
-    this.partialGameList.push(...this.gameList.slice(this._listStyle.partialGamesCounter, this._listStyle.partialGamesCounter + 8));
+    this.partialGameList.push(
+      ...this.gameList.slice(
+        this._listStyle.partialGamesCounter,
+        this._listStyle.partialGamesCounter + 8
+      )
+    );
     this._listStyle.partialGamesCounter += 8;
   }
-
 }

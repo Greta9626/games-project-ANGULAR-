@@ -15,7 +15,7 @@ export class ModalComponent implements OnInit {
 
   gameLongData!: Game;
   loadingSpinner: boolean = true;
-  subs: Subscription[] = [];
+  sub!: Subscription;
 
   constructor(
     private gamesService: GamesService,
@@ -23,18 +23,16 @@ export class ModalComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    /* this.openModal() */
-    this.subs.push(
-      this.gamesService.getSingleGame(this.gameShortData.id).subscribe(
+    this.sub = this.gamesService.getSingleGame(this.gameShortData.id).subscribe(
         (data) => (
           this.gameLongData = data,
           this.loadingSpinner = false
         )
       )
-    );
   }
 
-  openModal() {
-    
+  ngOnDestroy(){
+    this.sub.unsubscribe();
   }
+
 }

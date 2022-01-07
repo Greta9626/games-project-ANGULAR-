@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { MostPlayedCardComponent } from './components/most-played-card/most-played-card.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AboveTheFoldComponent } from './components/above-the-fold/above-the-fold.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MainPlatformComponent,
     BannerCardComponent,
     ModalComponent,
+    AboveTheFoldComponent,
   ],
   imports: [
     CommonModule,

@@ -1,13 +1,16 @@
 .card {
-  background-color: #2b2e33;
+  background-color: #161820;
   border-radius: 20px;
   font-size: 12px;
   padding: 0;
   max-width: 350px;
+  transition: 0.3s;
+
 }
 
 .card:hover {
   background-color: black;
+  transition: 0.5s;
 }
 
 #btn {
@@ -45,7 +48,7 @@
 
 .card-img-top {
   border-radius: 20px 20px 0px 0px;
-  height: 65%;
+  object-fit: cover;
 }
 
 .btn-danger {

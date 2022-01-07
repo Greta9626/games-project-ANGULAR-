@@ -1,9 +1,9 @@
 <div class="d-flex flex-column">
         <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-12 col-12 d-flex justify-content-center align-items-center" *ngFor="let game of partialGameList" [ngClass]="_listStyle.type">
+            <div class="col-lg-3 col-md-6 col-sm-12 col-12" *ngFor="let game of partialGameList" [ngClass]="_listStyle.type">
                 <app-game-card [gameData]="game" [cardHeight]="_listStyle.cardHeight"></app-game-card>
             </div>
         </div>
 
-    <a *ngIf="_listStyle.showViewMore" class="btn d-flex justify-content-center mb-3" (click)="viewMore()">View More</a>
+    <a *ngIf="_listStyle.showViewMore" class="btn d-flex justify-content-center mb-5" (click)="viewMore()">View More</a>
 </div>

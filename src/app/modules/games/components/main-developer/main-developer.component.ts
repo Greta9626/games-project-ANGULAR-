@@ -14,21 +14,19 @@ export class MainDeveloperComponent implements OnInit {
   filter!: string;
   gamesByDeveloper: Game[] = [];
   loadingSpinner: boolean = false;
-  subs: Subscription[] = [];
+  sub!: Subscription;
 
   constructor(private gamesService: GamesService) {}
 
   ngOnInit(): void {
-    this.subs.push(
-      this.gamesService.getAllGames().subscribe((data) => {
-        this.allGames = data;
-        data.map((elem) => {
-          if (!this.developers.includes(elem.developer)) {
-            this.developers.push(elem.developer);
-          }
-        });
-      })
-    );
+    this.sub = this.gamesService.getAllGames().subscribe((data) => {
+      this.allGames = data;
+      data.map((elem) => {
+        if (!this.developers.includes(elem.developer)) {
+          this.developers.push(elem.developer);
+        }
+      });
+    });
   }
 
   onChangeSelect(): void {
@@ -36,6 +34,10 @@ export class MainDeveloperComponent implements OnInit {
     this.gamesByDeveloper = this.allGames.filter(
       (game) => game.developer === this.filter
     );
-    setTimeout(() => this.loadingSpinner = false, 1000);
+    setTimeout(() => (this.loadingSpinner = false), 1000);
+  }
+
+  ngOnDestroy(){
+    this.sub.unsubscribe();
   }
 }
